@@ -1,0 +1,567 @@
+body{
+    background-color: black;
+    margin: 0;
+}
+
+#site {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: black;
+    margin: 0;
+}
+
+.eteindre {
+    animation: eteindre 150ms ease-in forwards;
+}
+@keyframes eteindre {
+    0% {opacity: 1}
+    100% {opacity: 0}
+}
+.allumer {
+    animation: allumer 150ms ease-in forwards;
+}
+@keyframes allumer {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
+.background{
+    position: relative;
+    min-width: 380px;
+    width: 100%;
+    min-height: 500px;
+    height: 100vh;
+    z-index: 5;
+}
+.bois {
+    overflow: paged-y;
+    height: 80%;
+    width: 100%;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    bottom: 0 ;
+    max-height: 200px;
+    max-width: 1100px;
+    background: url("../img/bois.png") bottom no-repeat;
+    background-size: 100% auto;
+    box-shadow: inset 0 0 20px 5px black;
+}
+.bibliotheque {
+    z-index: -1;
+    max-width:70vw;
+    overflow: paged-y;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    background: url("../img/bibliotheque.jpg") top no-repeat;
+}
+.yeux > img{
+    position : absolute;
+    bottom : 33vh;
+    width: 80px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+.bougie-mur{
+    left: 0;
+    position: absolute;
+}
+.bougie-flamme{
+    left: 0;
+    z-index: 1;
+    position: absolute;
+    animation: animatedFire  4000ms infinite;
+}
+
+@keyframes animatedFire {
+    0%{filter: drop-shadow(0 0 1.2rem gold) drop-shadow(0 0 1.2rem mintcream)}
+    20%{filter: drop-shadow(0 0 1.9rem gold) drop-shadow(0 0 1.9rem mintcream)}
+    30%{filter: drop-shadow(0 0 1.4rem gold) drop-shadow(0 0 1.4rem mintcream)}
+    40%{filter: drop-shadow(0 0 1.2rem gold) drop-shadow(0 0 1.2rem mintcream)}
+    60%{filter: drop-shadow(0 0 1.5rem gold) drop-shadow(0 0 1.5rem mintcream)}
+    75%{filter: drop-shadow(0 0 2rem gold) drop-shadow(0 0 2rem mintcream)}
+    100%{filter: drop-shadow(0 0 1.2rem gold) drop-shadow(0 0 1.2rem mintcream)}
+}
+
+.corp{
+    width: 100%;
+    top:0px;
+    position: absolute;
+    min-width: 380px;
+    z-index: 10;
+}
+
+.corp-haut{
+    display: flex;
+    width: 100%;
+    height: 15vh;
+    min-height: 75px;
+}
+.boutton{
+    height: 100%;
+    position:relative;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    background-color: Transparent;
+    border: none;
+    overflow: hidden;
+}
+.boutton > div {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px / 65px;
+    box-shadow: 0 0 10px #000;
+}
+.boutton > div > label{
+    vertical-align: middle;
+}
+.boutton:hover > div{
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px / 65px;
+    box-shadow: 0 0 10px #000;
+    cursor: pointer;
+}
+.boutton:hover.anim > div{
+    cursor: default;
+}
+.boutton:hover > div > label{
+    cursor: pointer;
+}
+.boutton-actif{
+    height: 100%;
+    position:relative;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    background-color: Transparent;
+    border: none;
+    overflow: hidden;
+}
+.boutton-actif > div {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px / 65px;
+    box-shadow: 0 0 10px #000;
+}
+.boutton-actif > div > label{
+    vertical-align: middle;
+}
+.poignee{
+    height: 100%;
+    background-image: url("../img/poignee.png");
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    z-index:1;
+}
+.poignee-bas{
+    height: 80%;
+    background-image: url("../img/poignee2.png");
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+}
+.inverse{
+    transform: scaleX(-1);
+}
+.menu{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.barre{
+    position: absolute;
+    top : 50%;
+    width: 100%;
+    transform: translateY(-50%);
+}
+#barre.move-up{
+    animation: animatedMenuUp  400ms ;
+    background-position-y: 0%;
+    height: 80%;
+}
+#barre.move-down{
+    animation: animatedMenuDown  600ms ;
+}
+#barre{
+    background-image: url("../img/parchemin.jpg");
+    background-position-y: +100%;
+    height: 75%;
+}
+
+.corp-contenu{
+    min-height :425px;
+}
+.contenu-haut{
+    height: 100%;
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+.contenu-bas{
+    z-index: 10;
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+.contenu{
+    position: relative;
+}
+.page{
+    height: 100%;
+    width: 100%;
+    background: url("../img/parchemin.png") left bottom no-repeat;
+    background-size: 100% auto;
+    z-index: 5;
+
+}
+#contenu-page{
+    justify-content: flex-start;
+    text-align: left;
+    min-height: 65vh;
+}
+#contenu-page>label, #contenu-page>h2, #contenu-page>a{
+    margin: 10px 20px 10px 20px;
+}
+#page{
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position:relative;
+    justify-content: end;
+}
+
+.bas-de-page{
+    height:70%;
+    background-image: url("../img/parchemin.jpg");
+}
+
+
+
+@media only screen and (max-height:500px) {
+    .bibliotheque {
+        height: 300px;
+        top: 75px ;
+        background-size: 300px auto;
+    }
+    .page{
+        box-shadow:inset 0 0 25px 7.5px black;
+    }
+    .contenu-bas{
+        height: 30px;
+        margin-top: -7.5px;
+        margin-bottom: 7.5px;
+    }
+    .bas-de-page{
+        box-shadow:inset 0 0 10px 5px black;
+    }
+    .boutton > div > label{
+        margin-top: -9.375px;
+        line-height:75px;
+    }
+    .boutton.move-up > div > label{
+        margin-top: -7.5px;
+        animation: animatedMenuSizeUp  400ms ;
+    }
+    .boutton.move-down > div > label{
+        margin-top: -9.375px;
+        animation: animatedMenuSizeDown  600ms ;
+    }
+    .boutton:hover > div > label{
+        margin-top: -40px;
+        height: 2px;
+        box-shadow: 0 47.5px 3px #000, 0 47.5px 8px #000, 0 47.5px 15px #000;
+    }
+    .boutton-actif > div > label{
+        margin-top: -40px;
+        line-height:75px;
+        height: 2px;
+        box-shadow: 0 47.5px 3px #000, 0 47.5px 8px #000, 0px 47.5px 15px #000;
+    }
+    .boutton-actif.move-up.anim > div > label, .boutton:hover.move-up.anim > div > label{
+        margin-top: -36.25px;
+        animation: animatedMenuActifSizeUp  400ms ;
+    }
+    .boutton-actif.move-down > div > label, .boutton:hover.move-down.anim > div > label{
+        margin-top: -40px;
+        animation: animatedMenuActifSizeDown  600ms ;
+    }
+    .ombre{
+        box-shadow: inset 0 1.25px 17.5px 10px black;
+    }
+    .contenu{
+        height: 325px;
+        margin-top: -7px;
+        margin-bottom: 7px;
+    }
+    #contenu.move-up{
+        animation: animatedPageUp  400ms ;
+        height: 35px;
+    }
+
+    #contenu.move-down{
+        animation: animatedPageDown  600ms ;
+        height: 325px;
+    }
+    #page{
+        margin-top:-5px;
+    }
+    @keyframes animatedPageUp {
+        0%{height: 325px;}
+        100%{height: 35px;}
+        0%{margin-top: -7px;}
+        100%{margin-top: -5.6px;}
+        0%{margin-bottom: 7px;}
+        100%{margin-bottom: 5.6px;}
+    }
+    @keyframes animatedPageDown {
+        0%{height: 35px;}
+        100% {height: 325px;}
+        0%{margin-top: -5.6px;}
+        100%{margin-top: -7px;}
+        0%{margin-bottom: 5.6px;}
+        100%{margin-bottom: 7px;}
+    }
+    @keyframes animatedMenuSizeUp {
+        0%{margin-top: -9.375px;}
+        100%{margin-top: -7.5px;}
+    }
+    @keyframes animatedMenuSizeDown {
+        0%{margin-top: -7.5px;}
+        100%{margin-top: -9.375px;}
+    }
+    @keyframes animatedMenuActifSizeUp {
+        0%{margin-top: -40px;}
+        100%{margin-top: -36.25px;}
+    }
+    @keyframes animatedMenuActifSizeDown {
+        0%{margin-top: -36.25px;}
+        100%{margin-top: -40px;}
+    }
+}
+
+@media only screen and (min-height:501px) {
+    .bibliotheque {
+        height: 65vh;
+        top: 15vh ;
+        background-size: 65vh auto;
+    }
+    .page{
+        box-shadow:inset 0 0 5vh 2vh black;
+    }
+    .contenu-bas{
+        height: 6vh ;
+        margin-top: -1.5vh;
+        margin-bottom: 1.5vh;
+    }
+    .bas-de-page{
+        box-shadow:inset 0 0 2vh 1vh black;
+    }
+    .boutton > div > label{
+        margin-top: -1.875vh;
+        line-height:15vh;
+    }
+    .boutton.move-up > div > label {
+        margin-top: -1.5vh;
+        animation: animatedMenuSizeUp  400ms ;
+    }
+    .boutton.move-down > div > label {
+        margin-top: -1.875vh;
+        animation: animatedMenuSizeDown 600ms ;
+    }
+    .boutton:hover > div > label{
+        margin-top: -8vh;
+        height: 2px;
+        box-shadow: 0 9.5vh 3px #000, 0 9.5vh 1.6vh #000, 0 9.5vh 3vh #000;
+    }
+    .boutton-actif > div > label{
+        margin-top: -8vh;
+        line-height:15vh;
+        height: 2px;
+        box-shadow: 0 9.5vh 3px #000, 0 9.5vh 1.6vh #000, 0 9.5vh 3vh #000;
+    }
+    .boutton-actif.move-up.anim > div > label, .boutton:hover.move-up.anim > div > label{
+        margin-top: -7.25vh;
+        animation: animatedMenuActifSizeUp  400ms ;
+    }
+    .boutton-actif.move-down > div > label, .boutton:hover.move-down.anim > div > label{
+        margin-top: -8vh;
+        animation: animatedMenuActifSizeDown  600ms ;
+    }
+    .ombre {
+        box-shadow:
+        inset 0 0.25vh 3.5vh 2vh black;
+    }
+    .contenu{
+        height: 65vh;
+        margin-top: -1.4vh;
+        margin-bottom: 1.4vh;
+    }
+    #contenu.move-up{
+        animation: animatedPageUp  400ms ;
+        height: 8vh;
+    }
+
+    #contenu.move-down{
+        animation: animatedPageDown  600ms ;
+        height: 65vh;
+    }
+    #page{
+        margin-top:-1vh;
+    }
+
+    @keyframes animatedPageUp {
+        0%{height: 65vh;}
+        100%{height: 8vh;}
+        0%{margin-top: -1.4vh;}
+        100%{margin-top: -1.12vh;}
+        0%{margin-bottom: 1.4vh;}
+        100%{margin-bottom: 1.12vh;}
+    }
+    @keyframes animatedPageDown {
+        0%{height: 8vh;}
+        100% {height: 65vh;}
+        0%{margin-top: -1.12vh;}
+        100%{margin-top: -1.4vh;}
+        0%{margin-bottom: 1.12vh;}
+        100%{margin-bottom: 1.4vh;}
+    }
+    @keyframes animatedMenuSizeUp {
+        0%{margin-top: -1.875vh;}
+        100%{margin-top: -1.5vh;}
+    }
+    @keyframes animatedMenuSizeDown {
+        0%{margin-top: -1.5vh;}
+        100%{margin-top: -1.875vh;}
+    }
+    @keyframes animatedMenuActifSizeUp {
+        0%{margin-top: -8vh;}
+        100%{margin-top: -7.25vh;}
+    }
+    @keyframes animatedMenuActifSizeDown {
+        0%{margin-top: -7.25vh;}
+        100%{margin-top: -8vh;}
+    }
+}
+
+
+
+@media only screen and (max-width:650px) {
+    .bibliotheque {
+        height: 450px;
+        top: 175px ;
+        background-size: 450px auto;
+    }
+    .bougie-mur {
+        top: 200px;
+        height: 175px;
+    }
+    .bougie-flamme {
+        top: 200px;
+        height: 175px;
+    }
+
+}
+
+@media only screen and (min-width:651px) {
+
+    .bougie-mur {
+        top: 20vh;
+        max-height: 35vh;
+        max-width: 20vw;
+    }
+    .bougie-flamme {
+        top: 20vh;
+        max-height: 35vh;
+        max-width: 20vw;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+#smogogo{
+    width: 80%;
+    animation:spin 7s linear infinite;
+    z-index :1000;
+}
+
+.message404{
+    color: palevioletred;
+    padding-top:10%;
+    padding-bottom:10%;
+}
+
+.image404{
+    padding-top:10%;
+    padding-bottom:10%;
+}
+
+.conteneur404{
+    padding-top:100px;
+}
+
+#smogo{
+    user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+#decompte{
+    position : absolute;
+    z-index :1001;
+    font-size: 110px;
+    text-shadow: #000000 1px 1px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px;
+    color : whitesmoke;
+    display:none;
+}
+
+#compteur{
+    text-shadow: #000000 1px 1px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px;
+    color : whitesmoke;
+}
+
+@keyframes spin {
+    100% { -webkit-transform: rotate(360deg);transform:rotate(360deg); }
+}
+
+@keyframes animatedMenuUp {
+    0%{background-position-y: 100%;}
+    100%{background-position-y: 0%;}
+    0%{height: 75%;}
+    100%{height: 80%;}
+}
+
+@keyframes animatedMenuDown {
+    0%{background-position-y: 0%;}
+    100% {background-position-y: 100%;}
+    0%{height: 80%;}
+    100% {height: 75%;}
+}
