@@ -92,4 +92,6 @@ export default {
 
 <style>
   @import 'assets/css/style.css';
+  @import 'assets/css/vendor/bootstrap.min.css';
+  @import 'assets/css/vendor/bootstrap-grid.min.css';
 </style>
